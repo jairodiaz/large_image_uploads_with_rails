@@ -1,0 +1,19 @@
+== Uploading Large Images with Heroku
+
+Example rails project to troubleshoot issues uploading large images using Carrierwave and Amazon S3 with Heroku.
+
+It is suggested to use Unicorn and have multiple web processes. This can be configured in the file config/unicorn.rb like this:
+
+    worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
+
+The end solution was to use CarrierWave_Direct and use CORS - Cross Origin Resource Sharing.
+
+The example solution is located at:
+
+https://github.com/jairodiaz/carrierwave_direct_example
+
+And deployed at:
+
+http://upload-to-amazon.herokuapp.com
+
+
